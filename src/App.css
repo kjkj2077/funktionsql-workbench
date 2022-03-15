@@ -1,38 +1,89 @@
-.App {
+.app{
   text-align: center;
 }
+.lang{
+  margin: 30px 80px 60px; 
+  text-align: left;
+}
+.tras{
+  border: gainsboro 1px solid;
+  height: 60px;
+  padding-top: 13px;
+}
+.row{
+  padding-left: 12px;
+  padding-right: 12px;
+}
 
-.App-logo {
-  height: 40vmin;
+[contenteditable=true]:empty:before{
+  content: attr(placeholder);
+  display: block; 
+  width: 100%;
+  height: 400px;
+}
+
+div[contenteditable=true] {
+  border : 1px solid gainsboro;
+  color : #333;
+  font-size: 17px;
+  padding: 5px;
+  height: 100%;
+}
+
+#inner{
+    padding-right: 0px;
+    padding-left: 0px;
+}
+
+#second-box{
+  background-color: whitesmoke;
   pointer-events: none;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+#rotatebtn{
+  background-color:white;
+  border-radius: 50%;
+  border: 0px solid white;
+  padding-bottom: 10px;
+  height: 40px;
+  float: right;
+}
+#hr{
+  margin: 0px;
+}
+.langselect{
+  font-size: 20px;
+  font-weight: bolder;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.dropdown{
+  position : relative;
+  display : inline-block;
 }
 
-.App-link {
-  color: #61dafb;
+.dropdown-content{
+  display : none;
+  position : absolute;
+  z-index : 1; 
+  background-color:white;
+  width: 600%;
+  border: gainsboro 1px solid;
+  padding: 0px;
+  font-size: 20px;
+}
+.dropdown-content a{
+  display : block;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.dropdown:hover .dropdown-content {
+  display: block;
 }
+
+#translate-btn{
+  float: right;
+  width: 100%;
+}
+.close{
+  float: right;
+}
+
+
