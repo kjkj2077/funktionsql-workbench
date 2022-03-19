@@ -2,15 +2,16 @@ import './Translation.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Navbar, Container, Nav, NavDropdown, Button, Dropdown,CloseButton } from 'react-bootstrap';
 import { RotateCw } from 'react-feather';
+import { Link,Route,Switch} from 'react-router-dom';
 import React from 'react';
+
 
 function Translation() {
     return (
       <div className='app'>
-  
         <Navbar bg="white" expand="lg">
           <Container className='nav' >
-            <Navbar.Brand href="#home">FunktionsQL</Navbar.Brand>
+          <Link to="/"style={{ textDecoration: 'none' }}> <Navbar.Brand >FunktionsQL</Navbar.Brand></Link>
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Navbar.Collapse id="basic-navbar-nav">
               <Nav className="me-auto">
