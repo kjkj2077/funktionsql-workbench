@@ -1,15 +1,29 @@
-.phoneImage{
-    width: 70%;
-    height: 70%;
+header {
+    height: 75px;
+    padding: 2%;
+    color: black;
+    background: white;
+    font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+header span{
+    margin-left: 20px;
+}
+#header-sub{
+    color: black;
 }
 h4{
     margin-top: 20px;
     color: grey;
-    
 }
 #link{
     color: grey;
 }
 
-
+.phoneImage{
+    width: 70%;
+    height: 70%;
+}
 
