@@ -3,24 +3,17 @@ import './Login.css';
 import React, { useEffect, useState } from 'react';
 import { Button, Container, Navbar } from 'react-bootstrap';
 import { Link, Route, Switch } from 'react-router-dom';
-import axios from 'axios';
 import GooLogin from './GooLogin';
 import { gapi } from 'gapi-script';
+import Logging from './Logging';
 
 const clientId = "831001107036-ci56k1fp2jq41m3a2es9vdtsqbvnfr6u.apps.googleusercontent.com";
 
 function Login() {
+  const [username,setUsername] =useState("");
+  const [password,setPassword] =useState("");
 
-  useEffect(() => {
-    function start() {
-      gapi.client.init({
-        clientId: clientId,
-        scope: ""
-      })
-    }
-    gapi.load('client:auth2', start);
-  })
-
+ //여기에 저거넣기.
 
   return (
     <div className='app'>
@@ -31,12 +24,12 @@ function Login() {
       </Navbar>
 
       <h1 className='login'>로그인</h1>
-
-      <p className='id'><input type='text' className='i-id' placeholder='ID' /></p>
-      <p className='pw'><input type='password' className='i-pw' placeholder='PASSWORD' /></p>
-      <p className='button'><Button variant="outline-secondary" id="loginbtn">로그인</Button></p>
-      <Link to="/sg"><p className='button'><Button variant="outline-secondary" id="loginbtn">회원가입</Button></p></Link>
-
+      <form>
+      <p className='id'><input type='text' className='i-id' placeholder='이메일' id='username' value={username} onChange={(e) => setUsername(e.target.value)} /></p>
+      <p className='pw'><input type='password' className='i-pw' placeholder='PASSWORD' id='password' value={password} onChange={(e) => setPassword(e.target.value)} /></p>
+      <p className='button'><Button variant="outline-secondary" id="loginbtn" onClick={Logging}>로그인</Button></p>
+      <Link to="/sg"><p className='button'><Button variant="outline-secondary" id="loginbtn" >회원가입</Button></p></Link>
+      </form>
       <GooLogin />
 
       <footer >
@@ -51,3 +44,13 @@ function Login() {
   );
 }
 export default Login;
+
+// useEffect(() => {
+//   function start() {
+//     gapi.client.init({
+//       clientId: clientId,
+//       scope: ""
+//     })
+//   }
+//   gapi.load('client:auth2', start);
+// })

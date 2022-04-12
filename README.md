@@ -1,3 +1,1 @@
-- 메인,로그인,번역,회원가입사이트 UI
-- 구글 oauth
-- React Router
+npm start 를 하세요
