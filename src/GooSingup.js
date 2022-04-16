@@ -3,7 +3,6 @@ import GoogleLogin from 'react-google-login';
 import axios from "axios";
 const clientId = "831001107036-ci56k1fp2jq41m3a2es9vdtsqbvnfr6u.apps.googleusercontent.com";
 function GooSignup() {
-    
     const onSuccess = (res) => {
     console.log("login success!", res.profileObj);
     axios({

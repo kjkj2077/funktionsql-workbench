@@ -7,11 +7,13 @@ import Translation from './Translation.js';
 import Login from './Login.js';
 import Main from './Main.js'; 
 import Sg from './Sg';
+import { BrowserRouter } from 'react-router-dom';
 
 
 function App() {
   return (
     <div>
+      <BrowserRouter>
       <Route exact path='/'  >
           <Main/>
          </Route>
@@ -24,6 +26,7 @@ function App() {
         <Route exact path='/Translation'  >
          <Translation/>
         </Route>
+        </BrowserRouter>
       </div>
   );
 }
