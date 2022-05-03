@@ -2,20 +2,19 @@ import './Main.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Navbar, Container, Nav, NavDropdown, Button, Dropdown, CloseButton } from 'react-bootstrap';
 import { Link, Route, Switch } from 'react-router-dom';
-import React ,{useState}from 'react';
+import React, { useState } from 'react';
 import axios from 'axios';
 import GoogleLogin from 'react-google-login';
 
 function Main() {
-  
-  
+  const [LoginState, setLoginState] = useState(true);
+
   return (
     <div className='app'>
       <header>
         <h3>FunktionsQL</h3>
         <nav>
-          <Link to="/login" id="header-sub" style={{ textDecoration: 'none'}}><span>로그인</span></Link>
-          <Link to="/sg"  id="header-sub" style={{ textDecoration: 'none'}}><span>회원가입</span></Link>
+          {LoginState ===false ?(<Login/>):(<Logout/>)}
         </nav>
       </header>
       {/* header */}
@@ -26,7 +25,6 @@ function Main() {
         <Link id="link" to="/login"><h4>이미 계정이 있으신가요? 로그인</h4></Link>
         <img className="phoneImage" alt="iPhone_01" src="img/trans.png" />
       </div>
-
 
       <hr />
       <footer >
@@ -41,4 +39,23 @@ function Main() {
     </div>
   );
 }
+
+function Login() {
+  return (
+    <div>
+        <Link to="/login" id="header-sub" style={{ textDecoration: 'none'}}><span>로그인</span></Link>
+        <Link to="/sg"  id="header-sub" style={{ textDecoration: 'none'}}><span>회원가입</span></Link> 
+    </div>
+  );
+}
+function Logout() {
+  return (
+    <div>
+       <span>kjkj2077</span><Button variant="outline-success">로그아웃</Button>
+    </div>
+  );
+}
 export default Main;
+
+
+

@@ -46,12 +46,3 @@ function Sg() {
 }
 export default Sg;
 
-// useEffect(() => {
-//   function start() {
-//     gapi.client.init({
-//       clientId: clientId,
-//       scope: ""
-//     })
-//   }
-//   gapi.load('client:auth2', start);
-// })
