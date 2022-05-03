@@ -5,7 +5,6 @@ import { RotateCw } from 'react-feather';
 import { Link, Route, Switch } from 'react-router-dom';
 import React, { useState } from 'react';
 
-
 function Translation() {
   const [LoginState, setLoginState] = useState(true);
   return (

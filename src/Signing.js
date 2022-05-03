@@ -6,7 +6,7 @@ function Signing(){
     const confirm_password =document.getElementById('confirm_password')
     axios({
         method:"POST",
-        url: 'http://15.164.99.115/auth/signup/basic',
+        url: REACT_APP_AUTH_SIGNUP_BASIC,
         data:{
             "username": username?.value,
             "password": password?.value,
