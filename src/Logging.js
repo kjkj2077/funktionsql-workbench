@@ -7,7 +7,7 @@ function Logging() {
 
     axios({
         method: "POST",
-        url: REACT_APP_AUTH_LOGIN_BASIC,
+        url: process.env.REACT_APP_AUTH_LOGIN_BASIC,
         data: {
             "username": username?.value,
             "password": password?.value

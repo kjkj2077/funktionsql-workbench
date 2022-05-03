@@ -1,14 +1,17 @@
 import * as React from 'react';
 import GoogleLogin from 'react-google-login';
 import axios from "axios";
-const clientId = REACT_APP_GOOGLE_CLIENTID;
+
+
+const clientId = process.env.REACT_APP_GOOGLE_CLIENTID;
 
 function GooLogin(){
+    
     const onSuccess = (res) =>{
         console.log("login success!",res.profileObj);
         axios({
             method:"POST",
-            url: REACT_APP_AUTH_LOGIN_SOCIAL,
+            url: process.env.REACT_APP_AUTH_LOGIN_SOCIAL,
             data:{
                 "username": res.profileObj.email,
                 "password": "",
