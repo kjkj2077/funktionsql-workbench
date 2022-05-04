@@ -7,6 +7,7 @@ function Signing(){
     axios({
         method:"POST",
         url: process.env.REACT_APP_AUTH_SIGNUP_BASIC,
+        //REACT_APP_AUTH_SIGNUP_BASIC='http://15.164.99.115/auth/signup/basic';
         data:{
             "username": username?.value,
             "password": password?.value,
