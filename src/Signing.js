@@ -16,6 +16,7 @@ function Signing(){
     }).then((res)=>{
         console.log(res);
         window.alert(JSON.stringify(res.data.username).replace(/\"/gi, "")+"계정 만들기 성공");
+        document.location.href = '/Login';
     }).catch(error=>{
         console.log(error);
         window.alert("계정만들기 실패.");

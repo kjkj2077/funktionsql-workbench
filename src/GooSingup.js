@@ -18,6 +18,7 @@ function GooSignup() {
         }
     }).then((res)=>{
         console.log(res);
+        document.location.href = '/Login';
     }).catch(error=>{
         console.log(error);
     });
