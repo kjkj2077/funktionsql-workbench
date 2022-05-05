@@ -1,11 +1,11 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
-import './Sg.css';
+import './css/Sg.css';
 import React, { useEffect, useState } from 'react';
 import { Button, Container, Navbar } from 'react-bootstrap';
 import { Link, Route, Switch } from 'react-router-dom';
-import GooSignup from './GooSingup';
-import { gapi } from 'gapi-script';
-import Signing from './Signing';
+import GooSignup from './function/GooSingup';
+import Signing from './function/Signing';
+import Footer from './function/Footer';
 
 function Sg() {
 
@@ -31,14 +31,7 @@ function Sg() {
 
       <GooSignup />
 
-      <footer >
-        <Container>
-          <div >
-            FunktionsQL<br />
-            Copyright © FunktionsQL Corp. All rights reserved.
-          </div>
-        </Container>
-      </footer>
+      <Footer/>
     </div>
   );
 }

@@ -1,6 +1,4 @@
 import axios from "axios";
-import { useHistory } from "react-router-dom";
-import { Toast } from 'react-bootstrap';
 function Logging() {
     const username = document.getElementById("username");
     const password = document.getElementById('password');

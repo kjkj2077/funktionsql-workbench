@@ -1,13 +1,11 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
-import './Login.css';
+import './css/Login.css';
 import React, { useEffect, useState } from 'react';
 import { Button, Container, Navbar } from 'react-bootstrap';
 import { Link, Route, Switch } from 'react-router-dom';
-import GooLogin from './GooLogin';
-import { gapi } from 'gapi-script';
-import Logging from './Logging';
-
-const clientId = "831001107036-ci56k1fp2jq41m3a2es9vdtsqbvnfr6u.apps.googleusercontent.com";
+import GooLogin from './function/GooLogin';
+import Logging from './function/Logging';
+import Footer from './function/Footer';
 
 function Login() {
   const [username,setUsername] =useState("");
@@ -32,25 +30,9 @@ function Login() {
       </form>
       <GooLogin />
 
-      <footer >
-        <Container>
-          <div >
-            FunktionsQL<br />
-            Copyright © FunktionsQL Corp. All rights reserved.
-          </div>
-        </Container>
-      </footer>
+      <Footer/>
     </div>
   );
 }
 export default Login;
 
-// useEffect(() => {
-//   function start() {
-//     gapi.client.init({
-//       clientId: clientId,
-//       scope: ""
-//     })
-//   }
-//   gapi.load('client:auth2', start);
-// })

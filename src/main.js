@@ -1,10 +1,9 @@
-import './Main.css';
+import './css/Main.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Navbar, Container, Nav, NavDropdown, Button, Dropdown, CloseButton } from 'react-bootstrap';
 import { Link, Route, Switch } from 'react-router-dom';
 import React, { useState } from 'react';
-import axios from 'axios';
-import GoogleLogin from 'react-google-login';
+import Footer from './function/Footer';
 
 function Main() {
   const [LoginState, setLoginState] = useState(true);
@@ -27,14 +26,7 @@ function Main() {
       </div>
 
       <hr />
-      <footer >
-        <Container>
-          <div >
-            FunktionsQL<br />
-            Copyright © FunktionsQL Corp. All rights reserved.
-          </div>
-        </Container>
-      </footer>
+      <Footer/>
       {/* footer */}
     </div>
   );

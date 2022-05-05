@@ -1,5 +1,5 @@
 // eslint-disable
-import './App.css';
+import './css/App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Link,Route,Switch} from 'react-router-dom';
 import React ,{useState}from 'react';
