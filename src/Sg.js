@@ -7,8 +7,6 @@ import GooSignup from './GooSingup';
 import { gapi } from 'gapi-script';
 import Signing from './Signing';
 
-const clientId = "831001107036-ci56k1fp2jq41m3a2es9vdtsqbvnfr6u.apps.googleusercontent.com";
-
 function Sg() {
 
   const [username,setUsername] =useState('');

@@ -4,7 +4,6 @@ import axios from "axios";
 
 
 const clientId = process.env.REACT_APP_GOOGLE_CLIENTID;
-//const clientId = process.env.REACT_APP_GOOGLE_CLIENTID;
 function GooLogin(){
     
     const onSuccess = (res) =>{
@@ -12,7 +11,6 @@ function GooLogin(){
         axios({
             method:"POST",
             url: process.env.REACT_APP_AUTH_LOGIN_SOCIAL,
-            //REACT_APP_AUTH_LOGIN_SOCIAL='http://15.164.99.115/auth/login/social';
             data:{
                 "username": res.profileObj.email,
                 "password": "",

@@ -7,10 +7,11 @@ import React, { useState } from 'react';
 
 function Translation() {
   const [LoginState, setLoginState] = useState(true);
+  const [Content, setContent] = useState('');
   return (
     <div className='app'>
       <header>
-        <Link to="/" style={{ textDecoration: 'none',color: 'black',fontSize:20 }}>FunktionsQL</Link>
+        <Link to="/" style={{ textDecoration: 'none', color: 'black', fontSize: 20 }}>FunktionsQL</Link>
         <nav>
           {LoginState === false ? (<Login />) : (<Logout />)}
         </nav>
@@ -23,26 +24,7 @@ function Translation() {
           <div className="row" >
             <div className='col-5'   >
               <div class="dropdown">
-                <div className='langselect'>언어선택 ▼</div>
-                <div class="dropdown-content">
-                  <div class="container">
-                    <div class="row align-items-start">
-                      <div class="col dropdown-item">c</div>
-                      <div class="col dropdown-item">java</div>
-                      <div class="col dropdown-item">swift</div>
-                    </div>
-                    <div class="row align-items-center">
-                      <div class="col dropdown-item">python</div>
-                      <div class="col dropdown-item">javascript</div>
-                      <div class="col dropdown-item">node</div>
-                    </div>
-                    <div class="row align-items-end">
-                      <div class="col dropdown-item">jsp</div>
-                      <div class="col dropdown-item">something</div>
-                      <div class="col dropdown-item">someone</div>
-                    </div>
-                  </div>
-                </div>
+                <Langchoice/>
               </div>
             </div>
             <div className='col-1'>
@@ -52,13 +34,7 @@ function Translation() {
 
             <div className='col-6' >
               <div class="dropdown">
-                <div className='langselect' >언어선택 ▼</div>
-                <div class="dropdown-content">
-                  <a class="dropdown-item">java</a>
-                  <a class="dropdown-item">c</a>
-                  <a class="dropdown-item">swift</a>
-                  <a class="dropdown-item">python</a>
-                </div>
+              <Langchoice/>
               </div>
             </div>
           </div>
@@ -66,7 +42,7 @@ function Translation() {
         {/* 언어선택2 */}
         <div className="row" >
           <div className="col-6" id='inner'>
-            <div contentEditable="true" class='text' placeholder="input something" >
+            <div contentEditable="true" class='text' placeholder="input something" id='Content' value={Content} onChange={(e) => setContent(e.target.value)} >
             </div>
             <Button variant="outline-success" id="translate-btn">번역</Button>
           </div>
@@ -103,6 +79,33 @@ function Logout() {
   return (
     <div>
       <span>kjkj2077</span><Button variant="outline-success">로그아웃</Button>
+    </div>
+  );
+}
+
+function Langchoice() {
+  return (
+    <div>
+      <div className='langselect'>언어선택 ▼</div>
+      <div class="dropdown-content">
+        <div class="container">
+          <div class="row align-items-start">
+            <div class="col dropdown-item">c</div>
+            <div class="col dropdown-item">java</div>
+            <div class="col dropdown-item">swift</div>
+          </div>
+          <div class="row align-items-center">
+            <div class="col dropdown-item">python</div>
+            <div class="col dropdown-item">javascript</div>
+            <div class="col dropdown-item">node</div>
+          </div>
+          <div class="row align-items-end">
+            <div class="col dropdown-item">jsp</div>
+            <div class="col dropdown-item">something</div>
+            <div class="col dropdown-item">someone</div>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }

@@ -8,7 +8,6 @@ function Logging() {
     axios({
         method: "POST",
         url: process.env.REACT_APP_AUTH_LOGIN_BASIC,
-        //REACT_APP_AUTH_LOGIN_BASIC='http://15.164.99.115/auth/login/basic';
         data: {
             "username": username?.value,
             "password": password?.value
