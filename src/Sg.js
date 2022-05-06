@@ -13,8 +13,6 @@ function Sg() {
   const [password,setPassword] =useState('');
   const [confirm_password,setConfirm_password] =useState('');
 
-  //여기에 저거
-
   return (
     <div className='app'>
       <Navbar bg="white" expand="lg" id='nav'>

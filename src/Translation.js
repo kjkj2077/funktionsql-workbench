@@ -1,18 +1,22 @@
 import './css/Translation.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { Navbar, Container, Nav, NavDropdown, Button, Dropdown, CloseButton } from 'react-bootstrap';
+import { Button } from 'react-bootstrap';
 import { RotateCw } from 'react-feather';
 import { Link, Route, Switch } from 'react-router-dom';
 import React, { useState } from 'react';
 import Translate from './function/Translate';
 import Footer from './function/Footer';
 import MakeDB from './function/MakeDB';
+import MakeFunc from './function/MakeFunc';
+import Logout2 from './function/Logout2';
 
 function Translation() {
   const [LoginState, setLoginState] = useState(true);
+  const [code, setCode] = useState("");
   const [query_selector, setQuery_selector] = useState("");
   const [database_name,setDatabase_name] =useState("");
-
+  const [function_name,setFunction_name] =useState("");
+  console.log(database_name);
   return (
     <div className='app'>
       <header>
@@ -43,19 +47,25 @@ function Translation() {
         <div className="row" >
           <div className="col-6" id='inner'>
             <div>
-              <textarea class='text' placeholder="input something" id='query_selector' value={query_selector}  onChange={(e) => setQuery_selector(e.target.value)}/>
+              <textarea class='text1' placeholder="코드써라." id='code' value={code}  onChange={(e) => setCode(e.target.value)}/>
             </div>
             <Button variant="outline-success" id="translate-btn" onClick={Translate}>번역</Button>
           </div>
           <div class="col-6" id='inner'>
             <div>
-              <div class='text'  id="second-box">{query_selector}</div>
+             
+              <textarea class='text2' placeholder="쿼리써라." id='query_selector' value={query_selector}  onChange={(e) => setQuery_selector(e.target.value)}/>
+            </div>
+            <div>
+              <div class='text3'  id="second-box">{code}</div>
             </div>
             <Button variant="outline-success" id="translate-btn">복사</Button>
           </div>
         </div>
         <input type='text' placeholder='데이터베이스이름' id='database_name' value={database_name}onChange={(e) => setDatabase_name(e.target.value)} ></input>
-        <button onClick={MakeDB}>만들기</button>
+        <button onClick={MakeDB}>db만들기</button> 
+        <input type='text' placeholder='함수이름' id='function_name' value={function_name}onChange={(e) => setFunction_name(e.target.value)} ></input>
+        <button onClick={MakeFunc}>function만들기</button>
       </div>
       {/* 입력창 */}
       <hr />
@@ -75,7 +85,7 @@ function Login() {
 function Logout() {
   return (
     <div>
-      <span>kjkj2077</span><Button variant="outline-success">로그아웃</Button>
+      <span>{localStorage.getItem("username")}</span><Button onclick={Logout2}variant="outline-success">로그아웃</Button>
     </div>
   );
 }

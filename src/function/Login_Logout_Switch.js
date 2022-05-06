@@ -1,7 +1,6 @@
 import axios from "axios";
-function Logging() {
-    const username = document.getElementById("username");
-    const password = document.getElementById('password');
+function Login_Logout_Switch() {
+    
 
     axios({
         method: "POST",
@@ -25,4 +24,4 @@ function Logging() {
        
     });
 }
-export default Logging;
+export default Login_Logout_Switch;

@@ -11,8 +11,6 @@ function Login() {
   const [username,setUsername] =useState("");
   const [password,setPassword] =useState("");
 
- //여기에 저거넣기.
-
   return (
     <div className='app'>
       <Navbar bg="white" expand="lg" id='nav'>
@@ -29,8 +27,7 @@ function Login() {
       <Link to="/sg"><p className='button'><Button variant="outline-secondary" id="loginbtn" >회원가입</Button></p></Link>
       </form>
       <GooLogin />
-
-      <Footer/>
+      <Footer/> 
     </div>
   );
 }

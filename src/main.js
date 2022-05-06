@@ -1,12 +1,19 @@
 import './css/Main.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { Navbar, Container, Nav, NavDropdown, Button, Dropdown, CloseButton } from 'react-bootstrap';
+import { Button} from 'react-bootstrap';
 import { Link, Route, Switch } from 'react-router-dom';
 import React, { useState } from 'react';
 import Footer from './function/Footer';
+import Logout2 from './function/Logout2';
 
 function Main() {
   const [LoginState, setLoginState] = useState(true);
+
+  // if(localStorage.getItem("username")===""){
+  //   LoginState=true;
+  // }else{
+  //   LoginState=false;
+  // }
 
   return (
     <div className='app'>
@@ -27,7 +34,6 @@ function Main() {
 
       <hr />
       <Footer/>
-      {/* footer */}
     </div>
   );
 }
@@ -43,7 +49,7 @@ function Login() {
 function Logout() {
   return (
     <div>
-       <span>kjkj2077</span><Button variant="outline-success">로그아웃</Button>
+       <span>{localStorage.getItem("username")}</span><Button onclick={Logout2}variant="outline-success">로그아웃</Button>
     </div>
   );
 }
