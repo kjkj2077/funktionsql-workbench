@@ -14,24 +14,26 @@ function Translation() {
   const [LoginState, setLoginState] = useState(true);
   const [code, setCode] = useState("");
   const [query_selector, setQuery_selector] = useState("");
-  const [database_name,setDatabase_name] =useState("");
-  const [function_name,setFunction_name] =useState("");
-  console.log(database_name);
+  const [database_name, setDatabase_name] = useState("");
+  const [function_name, setFunction_name] = useState("");
+  const [result, setResult] = useState("");
+ 
   return (
     <div className='app'>
       <header>
         <Link to="/" style={{ textDecoration: 'none', color: 'black', fontSize: 20 }}>FunktionsQL</Link>
         <nav>
-          {LoginState === false ? (<Login />) : (<Logout />)}
+        {/* {LoginState === false ? (<Login />) : (<Logout />)} */}
+        <span>{localStorage.getItem("username")}</span><Button onclick={Logout2} variant="outline-success">로그아웃</Button>
         </nav>
       </header>
-      {/* nav */}
+     
       <hr id='hr' />
       <div className='total'>
         <div className='translate'>
           <div className="row" >
             <div className='col-5'   >
-                <Langchoice/>
+              <Langchoice />
             </div>
             <div className='col-1'>
               <button id='rotatebtn'><RotateCw /></button>
@@ -39,38 +41,29 @@ function Translation() {
             {/* 언어선택1 */}
 
             <div className='col-6' >
-              <Langchoice/>
+              <Langchoice />
             </div>
           </div>
         </div>
         {/* 언어선택2 */}
         <div className="row" >
           <div className="col-6" id='inner'>
-            <div>
-              <textarea class='text1' placeholder="코드써라." id='code' value={code}  onChange={(e) => setCode(e.target.value)}/>
-            </div>
+            <div><textarea class='text1' placeholder="코드써라." id='code' value={code} onChange={(e) => setCode(e.target.value)} /></div>
             <Button variant="outline-success" id="translate-btn" onClick={Translate}>번역</Button>
           </div>
           <div class="col-6" id='inner'>
-            <div>
-             
-              <textarea class='text2' placeholder="쿼리써라." id='query_selector' value={query_selector}  onChange={(e) => setQuery_selector(e.target.value)}/>
-            </div>
-            <div>
-              <div class='text3'  id="second-box">{code}</div>
-            </div>
+            <div><textarea class='text2' placeholder="쿼리써라." id='query_selector' value={query_selector} onChange={(e) => setQuery_selector(e.target.value)} /></div>
+            <div><div class='text3' id="result" value={result} >{code}</div></div>
             <Button variant="outline-success" id="translate-btn">복사</Button>
           </div>
         </div>
-        <input type='text' placeholder='데이터베이스이름' id='database_name' value={database_name}onChange={(e) => setDatabase_name(e.target.value)} ></input>
-        <button onClick={MakeDB}>db만들기</button> 
-        <input type='text' placeholder='함수이름' id='function_name' value={function_name}onChange={(e) => setFunction_name(e.target.value)} ></input>
+        <input type='text' placeholder='데이터베이스이름' id='database_name' value={database_name} onChange={(e) => setDatabase_name(e.target.value)} ></input>
+        <button onClick={MakeDB}>db만들기</button>
+        <input type='text' placeholder='함수이름' id='function_name' value={function_name} onChange={(e) => setFunction_name(e.target.value)} ></input>
         <button onClick={MakeFunc}>function만들기</button>
       </div>
-      {/* 입력창 */}
       <hr />
-      <Footer/>
-      {/* footer */}
+      <Footer />
     </div>
   );
 }
@@ -85,38 +78,38 @@ function Login() {
 function Logout() {
   return (
     <div>
-      <span>{localStorage.getItem("username")}</span><Button onclick={Logout2}variant="outline-success">로그아웃</Button>
+      <div>{localStorage.getItem("username")}</div><Button onclick={Logout2} variant="outline-success">로그아웃</Button>
     </div>
   );
 }
 
-
+//{LoginState === false ? (<Login />) : (<Logout />)}
 
 function Langchoice() {
   return (
     <div>
       <div class="dropdown">
-      <div className='langselect'>언어선택 ▼</div>
-      <div class="dropdown-content">
-        <div class="container">
-          <div class="row align-items-start">
-            <div class="col dropdown-item">c</div>
-            <div class="col dropdown-item">java</div>
-            <div class="col dropdown-item">swift</div>
-          </div>
-          <div class="row align-items-center">
-            <div class="col dropdown-item">python</div>
-            <div class="col dropdown-item">javascript</div>
-            <div class="col dropdown-item">node</div>
-          </div>
-          <div class="row align-items-end">
-            <div class="col dropdown-item">jsp</div>
-            <div class="col dropdown-item">something</div>
-            <div class="col dropdown-item">someone</div>
+        <div className='langselect'>언어선택 ▼</div>
+        <div class="dropdown-content">
+          <div class="container">
+            <div class="row align-items-start">
+              <div class="col dropdown-item">c</div>
+              <div class="col dropdown-item">java</div>
+              <div class="col dropdown-item">swift</div>
+            </div>
+            <div class="row align-items-center">
+              <div class="col dropdown-item">python</div>
+              <div class="col dropdown-item">javascript</div>
+              <div class="col dropdown-item">node</div>
+            </div>
+            <div class="row align-items-end">
+              <div class="col dropdown-item">jsp</div>
+              <div class="col dropdown-item">something</div>
+              <div class="col dropdown-item">someone</div>
+            </div>
           </div>
         </div>
       </div>
-    </div>
     </div>
   );
 }

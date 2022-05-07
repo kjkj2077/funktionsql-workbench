@@ -1,101 +1,104 @@
-.app{
-    text-align: center;
-  }
+.app {
+  text-align: center;
+}
 
-  .total{
-    margin: 30px 80px 60px; 
-    text-align: left;
-  }
-.text1{
-  display: block; 
+.total {
+  margin: 30px 80px 60px;
+  text-align: left;
+}
+span{
+  margin-right: 10px;
+}
+
+.text1 {
+  display: block;
   width: 100%;
   height: 450px;
   resize: none;
-  overflow:auto;
-}
-.text2{
-  display: block; 
-  width: 100%;
-  height: 100px;
-  resize: none;
-  overflow:auto;
-}
-.text3{
-  display: block; 
-  width: 100%;
-  height: 350px;
-  resize: none;
-  overflow:auto;
+  overflow: auto;
 }
 
-  .translate{
-    border: gainsboro 1px solid;
-    height: 60px;
-    padding-top: 13px;
-  }
-  .row{
-    padding-left: 12px;
-    padding-right: 12px;
-  }
-  
- 
-  
- 
-  #inner{
-      padding-right: 0px;
-      padding-left: 0px;
-  }
-  
-  #second-box{
-    background-color: whitesmoke;
-    pointer-events: none;
-  }
-  #rotatebtn{
-    background-color:white;
-    border-radius: 50%;
-    border: 0px solid white;
-    padding-bottom: 10px;
-    height: 40px;
-    float: right;
-  }
-  #hr{
-    margin: 0px;
-  }
-  .langselect{
-    font-size: 20px;
-    font-weight: bolder;
-  }
-  
-  .dropdown{
-    position : relative;
-    display : inline-block;
-  }
-  
-  .dropdown-content{
-    display : none;
-    position : absolute;
-    z-index : 1; 
-    background-color:white;
-    width: 600%;
-    border: gainsboro 1px solid;
-    padding: 0px;
-    font-size: 20px;
-  }
-  
-  .dropdown-content a{
-    display : block;
-  }
-  
-  .dropdown:hover .dropdown-content {
-    display: block;
-  }
-  
-  #translate-btn{
-    float: right;
-    width: 100%;
-  }
+.text2 {
+  display: block;
+  width: 100%;
+  height: 30px;
+  resize: none;
+  overflow: auto;
+}
 
-  .close{
-    float: right;
-  }
- 
+.text3 {
+  display: block;
+  width: 100%;
+  height: 420px;
+  resize: none;
+  overflow: auto;
+  background-color: whitesmoke;
+
+}
+
+.translate {
+  border: gainsboro 1px solid;
+  height: 60px;
+  padding-top: 13px;
+}
+
+.row {
+  padding-left: 12px;
+  padding-right: 12px;
+}
+
+#inner {
+  padding-right: 0px;
+  padding-left: 0px;
+}
+
+#rotatebtn {
+  background-color: white;
+  border-radius: 50%;
+  border: 0px solid white;
+  padding-bottom: 10px;
+  height: 40px;
+  float: right;
+}
+
+#hr {
+  margin: 0px;
+}
+
+.langselect {
+  font-size: 20px;
+  font-weight: bolder;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  z-index: 1;
+  background-color: white;
+  width: 600%;
+  border: gainsboro 1px solid;
+  padding: 0px;
+  font-size: 20px;
+}
+
+.dropdown-content a {
+  display: block;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+#translate-btn {
+  float: right;
+  width: 100%;
+}
+
+.close {
+  float: right;
+}

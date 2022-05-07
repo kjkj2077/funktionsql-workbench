@@ -9,7 +9,7 @@ function Translate() {
         headers:{
             Authorization: Bearer+localStorage.getItem('ac-token')
         },
-        url: "http://15.164.99.115/query/databases/1/execute",
+        url: "http://3.39.83.176:8000/query/databases/1/execute",
         data: {
             "query_selector": query_selector?.value,
             "function_name": function_name?.value,
@@ -19,8 +19,13 @@ function Translate() {
         }
     }).then((res) => {
         console.log(res); 
+        console.log(res.data.resopnse);
+        window.alert(JSON.stringify(res.data.resopnse).replace(/\"/gi, "") +"결과값");
     }).catch(error => {
         console.log(error);  
+        console.error(error.status);
+        console.error(error.config);
+        console.error(error.response?.data);
     });
   }
   export default Translate;

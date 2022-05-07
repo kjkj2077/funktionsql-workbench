@@ -8,7 +8,7 @@ function MakeFunc() {
         headers:{
             Authorization: Bearer+localStorage.getItem("ac-token")
         },
-        url: "http://15.164.99.115/query/databases/1/functions",
+        url: "http://3.39.83.176:8000/query/databases/1/functions",
         data: {
             "code": code?.value,
             "function_name": function_name?.value,

@@ -8,7 +8,7 @@ function MakeDB() {
         headers:{
             Authorization: Bearer+localStorage.getItem("ac-token")
         },
-        url: "http://15.164.99.115/query/databases",
+        url: "http://3.39.83.176:8000/query/databases",
         data: {
             "database_name": database_name.value
         }

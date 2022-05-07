@@ -21,6 +21,9 @@ function Logging() {
 
     }).catch(error => {
         console.log(error);
+        console.error(error.status);
+        console.error(error.config);
+        console.error(error.response?.data);
         window.alert("접속실패.");
        
     });
