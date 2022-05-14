@@ -17,10 +17,7 @@ function GooLogin() {
             }
         }).then((res) => {
             console.log(res);
-            
-            // localStorage.setItem("re-token", res.data.refresh_token);
-            // localStorage.setItem("ac-token", res.data.access_token);
-            // localStorage.setItem("username", res.data.username);
+            console.log(res.data.refresh_token);
             window.alert(JSON.stringify(res.data.username).replace(/\"/gi, "") + "님 접속 성공");
             document.location.href = '/Translation';
         }).catch(error => {
