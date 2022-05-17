@@ -10,11 +10,12 @@ import Footer from './function/Footer';
 function Login() {
   const [username,setUsername] =useState("");
   const [password,setPassword] =useState("");
+  const [information,setInformation] =useState("")
 
   return (
     <div className='app'>
       <Navbar bg="white" expand="lg" id='nav'>
-        <Container className='nav' >
+        <Container className='nav'>
           <Link to="/" style={{ textDecoration: 'none' }}> <Navbar.Brand href="#home">FunktionsQL</Navbar.Brand></Link>
         </Container>
       </Navbar>
@@ -23,7 +24,8 @@ function Login() {
       <form>
       <p className='id'><input type='text' className='i-id' placeholder='이메일' id='username' value={username} onChange={(e) => setUsername(e.target.value)} /></p>
       <p className='pw'><input type='password' className='i-pw' placeholder='PASSWORD' id='password' value={password} onChange={(e) => setPassword(e.target.value)} /></p>
-      <p className='button'><Button variant="outline-secondary" id="loginbtn" onClick={Logging}>로그인</Button></p>
+      <p className='button'><Button variant="outline-secondary" id="loginbtn" onClick={() => Logging(setInformation)}>로그인</Button></p>
+      <div className='information'>{information}</div>
       <Link to="/sg"><p className='button'><Button variant="outline-secondary" id="loginbtn" >회원가입</Button></p></Link>
       </form>
       <GooLogin />

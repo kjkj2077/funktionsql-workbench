@@ -3,7 +3,7 @@ import GoogleLogin from 'react-google-login';
 import axios from "axios";
 
 const clientId = process.env.REACT_APP_GOOGLE_CLIENTID;
-function GooLogin() {
+function GooLogin(setInformation) {
     const onSuccess = (res) => {
         console.log("login success!", res.profileObj);
         axios({
@@ -21,10 +21,8 @@ function GooLogin() {
             window.alert(JSON.stringify(res.data.username).replace(/\"/gi, "") + "님 접속 성공");
             document.location.href = '/Translation';
         }).catch(error => {
-            console.log(error);
-            console.error(error.status);
-            console.error(error.config);
-            console.error(error.response?.data);
+            console.log("login fail!", res);
+            setInformation(`접속불가`)
             window.alert("접속실패.");
         });
     }

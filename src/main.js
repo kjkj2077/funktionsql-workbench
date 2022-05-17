@@ -4,26 +4,16 @@ import { Button} from 'react-bootstrap';
 import { Link, Route, Switch } from 'react-router-dom';
 import React, { useState } from 'react';
 import Footer from './function/Footer';
-import Logout2 from './function/Logout2';
 
 function Main() {
-  const [LoginState, setLoginState] = useState(true);
-
-  // if(localStorage.getItem("username")===""){
-  //   LoginState=true;
-  // }else{
-  //   LoginState=false;
-  // }
-
   return (
     <div className='app'>
       <header>
         <h3>FunktionsQL</h3>
         <nav>
-          {LoginState ===false ?(<Login/>):(<Logout/>)}
+        <span>{localStorage.getItem("username")}</span>
         </nav>
       </header>
-
       <div>
         <h1>개발자들을 위해 만들었습니다</h1>
         <h3>필요한 언어를 바로바로 번역하세요.</h3>
@@ -37,21 +27,6 @@ function Main() {
   );
 }
 
-function Login() {
-  return (
-    <div>
-        <Link to="/login" id="header-sub" style={{ textDecoration: 'none'}}><span>로그인</span></Link>
-        <Link to="/sg"  id="header-sub" style={{ textDecoration: 'none'}}><span>회원가입</span></Link> 
-    </div>
-  );
-}
-function Logout() {
-  return (
-    <div>
-       <span>{localStorage.getItem("username")}</span><Button onclick={Logout2}variant="outline-success">로그아웃</Button>
-    </div>
-  );
-}
 export default Main;
 
 

@@ -12,6 +12,7 @@ function Sg() {
   const [username,setUsername] =useState('');
   const [password,setPassword] =useState('');
   const [confirm_password,setConfirm_password] =useState('');
+  const [sg,setSg]=useState("")
 
   return (
     <div className='app'>
@@ -24,8 +25,9 @@ function Sg() {
       <h1 className='login'>회원가입</h1>
       <p className='id'><input type='text' className='i-id' placeholder='이메일' id='username'value={username} onChange={(e) => setUsername(e.target.value)} /></p>
       <p className='pw'><input type='password' className='i-pw' placeholder='비밀번호'id='password' value={password} onChange={(e) => setPassword(e.target.value)}/></p>
-      <p className='pw2'><input type='password' className='i-pw2' placeholder='비밀번호확인'id='confirm_password' value={confirm_password} onChange={(e) => setConfirm_password(e.target.value)} /></p>
-      <p className='button'><Button variant="outline-secondary" id="loginbtn" onClick={Signing}>만들기</Button></p>
+      <p className='pw2'><input type='password' className='i-pw2' placeholder='비밀번호 확인'id='confirm_password' value={confirm_password} onChange={(e) => setConfirm_password(e.target.value)} /></p>
+      <div className='sg'>{sg}</div>
+      <p className='button'><Button variant="outline-secondary" id="loginbtn" onClick={() => Signing(setSg)}>만들기</Button></p>
 
       <GooSignup />
 

@@ -1,6 +1,6 @@
 import axios from "axios";
 
-function Signing(){
+function Signing(setSg){
     const username = document.getElementById("username");
     const password = document.getElementById('password')
     const confirm_password =document.getElementById('confirm_password')
@@ -16,9 +16,17 @@ function Signing(){
         console.log(res);
         window.alert(JSON.stringify(res.data.username).replace(/\"/gi, "")+"계정 만들기 성공");
         document.location.href = '/Login';
-    }).catch(error=>{
-        console.log(error);
-        window.alert("계정만들기 실패.");
+    }).catch(err=>{
+        console.log(err);
+        console.log("?",err);
+        console.log(err.response.status);
+        if(password?.value != confirm_password?.value){
+            setSg(`비밀번호와 비밀번호 확인이 틀립니다.`)
+        }else if(err.response.status===400){
+            setSg(`이미있는 계정입니다.`)
+        }else{
+            window.alert("계정만들기 실패.");
+        }
     });
 }
 

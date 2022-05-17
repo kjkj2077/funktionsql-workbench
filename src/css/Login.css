@@ -36,3 +36,7 @@ footer{
 .google{
     margin: 30px 0px 0px auto;
 }
+.information{
+    padding-top: 10px;
+    color: red;
+}

@@ -3,7 +3,7 @@ import axios from "axios";
 function Translate(setResult) {
   const Bearer = "Bearer ";
   const query_selector = document.getElementById("query_selector");
-  const arr= query_selector?.value.split(" "); // arr[0] run.. arr[1] {function}
+  const arr= query_selector?.value.split(" "); 
   
   if(arr[0]=="use"){ // 해당데이터베이스 정보 반환
     axios({
@@ -22,7 +22,7 @@ function Translate(setResult) {
       })
       .catch((error) => {
         console.log(error);  
-        console.log(arr[1].substring(1,arr[1].length-1))
+        setResult(`use 오류`)
       });
   }
 
@@ -48,6 +48,7 @@ function Translate(setResult) {
       })
       .catch((error) => {
         console.log(error);
+        setResult(`run 오류`)
       });
 
   }else if(arr[0]=="select"){ //데이터베이스내애 함수 코드 조회
@@ -63,11 +64,11 @@ function Translate(setResult) {
     })
       .then((res) => {
         console.log("res", res); 
-        console.log("res", res.data.response); 
         setResult(`${res.data.response}`)   
       })
       .catch((error) => {
         console.log(error);
+        setResult(`select 오류`)
       });
 
   }else if(query_selector?.value=="show databases"){ //사용자가 보유중인 데이터베이스이름을 리스트형태로 반환
@@ -87,6 +88,7 @@ function Translate(setResult) {
       .catch((error) => {
         console.log(error);
         console.log(error.response);
+        setResult(`show databases 오류`)
       });
   }else if(query_selector?.value=="show functions"){ //사용자가 보유중인 함수이름을 리스트형태로 반환
     axios({
@@ -107,6 +109,7 @@ function Translate(setResult) {
       .catch((error) => {
         console.log(error);
         console.log(error.response);
+        setResult(`show functions 오류`)
       });
   }
 }

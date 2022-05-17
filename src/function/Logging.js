@@ -1,5 +1,5 @@
 import axios from "axios";
-function Logging() {
+function Logging(setInformation) {
     const username = document.getElementById("username");
     const password = document.getElementById('password');
 
@@ -16,16 +16,15 @@ function Logging() {
         localStorage.setItem("re-token", res.data.refresh_token);
         localStorage.setItem("ac-token", res.data.access_token);
         localStorage.setItem("username", res.data.username)
-        window.alert(JSON.stringify(res.data.username).replace(/\"/gi, "") + "님 접속 성공");
+        //window.alert(JSON.stringify(res.data.username).replace(/\"/gi, "") + "님 접속 성공");
         document.location.href = '/Translation';
 
-    }).catch(error => {
-        console.log(error);
-        console.error(error.status);
-        console.error(error.config);
-        console.error(error.response?.data);
-        window.alert("접속실패.");
-       
+    }).catch(err => {
+        if(err.response.status===403){
+            setInformation(`잘못된 아이디, 비밀번호입니다.`)
+        }else{
+            setInformation(`접속불가상태`);
+        }
     });
 }
 export default Logging;

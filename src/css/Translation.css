@@ -16,6 +16,7 @@ span{
   height: 450px;
   resize: none;
   overflow: auto;
+  border-bottom: 0px;
 }
 .text2 {
   display: block;
@@ -32,6 +33,7 @@ span{
   resize: none;
   overflow: auto;
   background-color: whitesmoke;
+  border-right: 1px solid gainsboro;
 }
 
 .translate {
@@ -100,10 +102,31 @@ span{
 .close {
   float: right;
 }
-.fun_but{
+.MakeDB_but{
   border-radius: 3px;
-  color: green;
+  color:rgb(36, 33, 33);
   background-color: white;
-  border: 1.5px solid green;
-  height: 30px;
+  border: 1.5px solid grey;
+  height: 35px;
+
+}
+.MakeFunc_but{
+  border-radius: 3px;
+  color: rgb(36, 33, 33);
+  background-color: white;
+  border: 1.5px solid grey;
+  height: 35px;
+  
+}
+#database_name{
+  height:35px;
+  width: 60%;
+  float: left;
+}
+#function_name{
+  height: 35px;
+  width: 60%;
+}
+#db_func{
+  padding: 0 0 0 0;
 }
