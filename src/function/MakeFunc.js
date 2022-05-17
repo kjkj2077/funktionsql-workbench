@@ -11,8 +11,7 @@ function MakeFunc() {
         headers:{
             Authorization: Bearer+localStorage.getItem("ac-token")
         },
-        url: //"http://3.39.83.176:8000/query/databases/"+localStorage.getItem("ac-token")+"/functions",
-        "http://3.39.83.176:8000/query/databases/60/functions",
+        url: process.env.REACT_APP_QUERY_DATABASES_FUNCTIONS+localStorage.getItem("id")+"/functions",
         data: {
             "code": code?.value,
             "function_name": function_name?.value,

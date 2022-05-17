@@ -17,7 +17,6 @@ span{
   resize: none;
   overflow: auto;
 }
-
 .text2 {
   display: block;
   width: 100%;
@@ -33,7 +32,6 @@ span{
   resize: none;
   overflow: auto;
   background-color: whitesmoke;
-
 }
 
 .translate {
@@ -101,4 +99,11 @@ span{
 
 .close {
   float: right;
+}
+.fun_but{
+  border-radius: 3px;
+  color: green;
+  background-color: white;
+  border: 1.5px solid green;
+  height: 30px;
 }

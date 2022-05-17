@@ -3,7 +3,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { Button } from 'react-bootstrap';
 import { RotateCw } from 'react-feather';
 import { Link, Route, Switch } from 'react-router-dom';
-import React, { useState, useRef, createContext,useEffect } from 'react';
+import React, { useState, useRef, createContext, useEffect } from 'react';
 import Translate from './function/Translate';
 import Footer from './function/Footer';
 import MakeDB from './function/MakeDB';
@@ -19,13 +19,14 @@ function Translation() {
   const [result, setResult] = useState("");
   const [language_name, setLanguage_name] = useState("PYTHON")
   const [language, setLanguage] = useState(0);
-
+  const str = "run {hello}"
+  const q = str.split(" ");
   const copy2 = async () => {
     await navigator.clipboard.writeText(result);
   }
-  
+
   return (
-   
+
     <div className='app'>
       <header>
         <Link to="/" style={{ textDecoration: 'none', color: 'black', fontSize: 20 }}>FunktionsQL</Link>
@@ -34,25 +35,25 @@ function Translation() {
           <span>{localStorage.getItem("username")}</span><Button onClick={Logout2} variant="outline-success">로그아웃</Button>
         </nav>
       </header>
-      {language}
+      {language}  {/* 언어변경 잘되나 확인용 */}
       <hr id='hr' />
       <div className='total'>
         <div className='translate'>
           <div className="row" >
-            <div className='col-5'   >
+            <div className='col-6'   >
               <div>
                 <div className="dropdown">
                   <div className='langselect'>{language_name} ▼</div>
                   <div className="dropdown-content">
                     <div className="container">
                       <div className="row align-items-start">
-                        <div className="col dropdown-item"  onClick={() => { setLanguage_name('PYTHON'); setLanguage(0); }} >PYTHON</div>
-                        <div className="col dropdown-item"  onClick={() => { setLanguage_name('NODEJS'); setLanguage(1); }} >NODEJS</div>
-                        <div className="col dropdown-item"  onClick={() => { setLanguage_name('JAVA'); setLanguage(2); }} >JAVA</div>
+                        <div className="col dropdown-item" onClick={() => { setLanguage_name('PYTHON'); setLanguage(0); }} >PYTHON</div>
+                        <div className="col dropdown-item" onClick={() => { setLanguage_name('NODEJS'); setLanguage(1); }} >NODEJS</div>
+                        <div className="col dropdown-item" onClick={() => { setLanguage_name('JAVA'); setLanguage(2); }} >JAVA</div>
                       </div>
                       <div className="row align-items-center">
-                        <div className="col dropdown-item"  onClick={() => { setLanguage_name('RUBY'); setLanguage(3); }} >RUBY</div>
-                        <div className="col dropdown-item"  onClick={() => { setLanguage_name('GO'); setLanguage(4); }} >GO</div>
+                        <div className="col dropdown-item" onClick={() => { setLanguage_name('RUBY'); setLanguage(3); }} >RUBY</div>
+                        <div className="col dropdown-item" onClick={() => { setLanguage_name('GO'); setLanguage(4); }} >GO</div>
                         <div className="col dropdown-item" ></div>
                       </div>
                     </div>
@@ -60,14 +61,8 @@ function Translation() {
                 </div>
               </div>
             </div>
-            <div className='col-1'>
-              {/* 언어선택1 */}
-              {/*<button id='rotatebtn'><RotateCw /></button>*/}{/* 빈곳 */}
-            </div>
             {/* 언어선택1 */}
-
             <div className='col-6' >
-              {/* 빈곳 */}
             </div>
           </div>
         </div>
@@ -79,18 +74,19 @@ function Translation() {
           </div>
           <div className="col-6" id='inner'>
             <div><textarea className='text2' placeholder="쿼리써라." id='query_selector' value={query_selector} onChange={(e) => setQuery_selector(e.target.value)} /></div>
+
             <div><div className='text3' id="result" value={result} >{result}</div></div>
             <Button variant="outline-success" id="translate-btn" onClick={copy2} >복사</Button>
           </div>
         </div>
         <input type='text' placeholder='데이터베이스이름' id='database_name' value={database_name} onChange={(e) => setDatabase_name(e.target.value)} ></input>
-        <button onClick={MakeDB}>db만들기</button>
+        <button  className='fun_but' onClick={MakeDB}>DB만들기</button>
         <input type='text' placeholder='함수이름' id='function_name' value={function_name} onChange={(e) => setFunction_name(e.target.value)} ></input>
-        <button onClick={MakeFunc}>function만들기</button>
-        <input type='text'  id='lang_name' value={language}  style={{ display : 'none' }} ></input>
+        <button className='fun_but' onClick={MakeFunc}>Function만들기</button>
+        <input type='text' id='lang_name' value={language} style={{ display: 'none' }} ></input>
       </div>
       <hr />
-      <Footer />  
+      <Footer />
     </div>
   );
 }

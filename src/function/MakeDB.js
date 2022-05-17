@@ -8,7 +8,7 @@ function MakeDB() {
         headers:{
             Authorization: Bearer+localStorage.getItem("ac-token")
         },
-        url: "http://3.39.83.176:8000/query/databases",
+        url: process.env.REACT_APP_QUERY_DATABASES_MAKE,
         data: {
             "database_name": database_name.value
         }
@@ -16,6 +16,7 @@ function MakeDB() {
         console.log(res); 
     }).catch(error => {
         console.log(error); 
+        console.log(error.response);
     });
   }
   export default  MakeDB;
