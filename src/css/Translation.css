@@ -3,13 +3,12 @@
 }
 
 .total {
-  margin: 30px 80px 60px;
+  margin: 30px 50px 40px;
   text-align: left;
 }
 span{
   margin-right: 10px;
 }
-
 .text1 {
   display: block;
   width: 100%;
@@ -52,15 +51,6 @@ span{
   padding-left: 0px;
 }
 
-#rotatebtn {
-  background-color: white;
-  border-radius: 50%;
-  border: 0px solid white;
-  padding-bottom: 10px;
-  height: 40px;
-  float: right;
-}
-
 #hr {
   margin: 0px;
 }
@@ -97,36 +87,40 @@ span{
 #translate-btn {
   float: right;
   width: 100%;
+  height: 30px;
+  padding: 0px 0px 0px 0px;
 }
 
-.close {
-  float: right;
+#MAKEDB,#MAKEFUN{
+  padding: 2px 2px 2px 2px;
+  height: 30px;
+  width: 100%;
+  padding-left: 0px;
+  padding-left: 0px;
 }
-.MakeDB_but{
-  border-radius: 3px;
-  color:rgb(36, 33, 33);
-  background-color: white;
-  border: 1.5px solid grey;
-  height: 35px;
+#database_name,#function_name{
+  width: 100%;
+  padding-left: 0px;
+  padding-left: 0px;
+}
+#right_row{
+  padding-left: 0px;
+  padding-left: 0px;
+}
+#FUN_INPUT,#DB_INPUT{
+  padding-right: 0px;
+}
 
+#DB_BUT,#FUN_BUT{
+  padding-left: 0px;
 }
-.MakeFunc_but{
-  border-radius: 3px;
-  color: rgb(36, 33, 33);
-  background-color: white;
-  border: 1.5px solid grey;
-  height: 35px;
+#FUN_BUT{
+  padding-right: 0px;
+}
+#QUERY_INPUT{
+  padding-right: 0px;
   
 }
-#database_name{
-  height:35px;
-  width: 60%;
-  float: left;
-}
-#function_name{
-  height: 35px;
-  width: 60%;
-}
-#db_func{
-  padding: 0 0 0 0;
+#QUERY_BUTTON{
+  padding-left: 0px;
 }

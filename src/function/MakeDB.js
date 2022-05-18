@@ -1,6 +1,6 @@
 import axios from "axios";
 
-function MakeDB() {
+function MakeDB(setResult) {
     const database_name = document.getElementById("database_name");
     const Bearer="Bearer "
     axios({
@@ -14,9 +14,14 @@ function MakeDB() {
         }
     }).then((res) => {
         console.log(res); 
+        
     }).catch(error => {
-        console.log(error); 
         console.log(error.response);
+        if(error.response.status===401){
+            setResult(`권한없는 계정입니다. 계정을 새로만들어주세요.`)
+        }else{
+            setResult(`접속불가상태`);
+        }
     });
   }
   export default  MakeDB;

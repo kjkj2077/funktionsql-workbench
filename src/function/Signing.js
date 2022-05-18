@@ -14,12 +14,11 @@ function Signing(setSg){
         }
     }).then((res)=>{
         console.log(res);
-        window.alert(JSON.stringify(res.data.username).replace(/\"/gi, "")+"계정 만들기 성공");
+        //window.alert(JSON.stringify(res.data.username).replace(/\"/gi, "")+"계정 만들기 성공");
         document.location.href = '/Login';
     }).catch(err=>{
         console.log(err);
         console.log("?",err);
-        console.log(err.response.status);
         if(password?.value != confirm_password?.value){
             setSg(`비밀번호와 비밀번호 확인이 틀립니다.`)
         }else if(err.response.status===400){

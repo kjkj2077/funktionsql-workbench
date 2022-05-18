@@ -18,12 +18,12 @@ function GooLogin(setInformation) {
         }).then((res) => {
             console.log(res);
             console.log(res.data.refresh_token);
-            window.alert(JSON.stringify(res.data.username).replace(/\"/gi, "") + "님 접속 성공");
+            //window.alert(JSON.stringify(res.data.username).replace(/\"/gi, "") + "님 접속 성공");
             document.location.href = '/Translation';
-        }).catch(error => {
+        }).catch(res => {
             console.log("login fail!", res);
             setInformation(`접속불가`)
-            window.alert("접속실패.");
+            //window.alert("접속실패.");
         });
     }
     const onFailure = (res) => {
