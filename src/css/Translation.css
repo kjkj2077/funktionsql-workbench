@@ -10,7 +10,7 @@
 }
 
 .total {
-  margin: 30px 50px 40px;
+  margin: 30px 50px 100px;
   text-align: left;
 }
 span{
@@ -23,6 +23,7 @@ span{
   resize: none;
   overflow: auto;
   border-bottom: 0px;
+  
 }
 .text2 {
   display: block;
@@ -30,6 +31,7 @@ span{
   height: 30px;
   resize: none;
   overflow: auto;
+  border: solid 1px grey;
 }
 
 .text3 {
@@ -100,7 +102,7 @@ span{
 
 #MAKEDB,#MAKEFUN{
   padding: 2px 2px 2px 2px;
-  height: 30px;
+  height: 28px;
   width: 100%;
   padding-left: 0px;
   padding-left: 0px;
@@ -109,6 +111,9 @@ span{
   width: 100%;
   padding-left: 0px;
   padding-left: 0px;
+  border: 1px solid grey;
+  border-radius: 3px;
+  height: 28px;
 }
 #right_row{
   padding-left: 0px;
@@ -116,6 +121,7 @@ span{
 }
 #FUN_INPUT,#DB_INPUT{
   padding-right: 0px;
+  
 }
 
 #DB_BUT,#FUN_BUT{

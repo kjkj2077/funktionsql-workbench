@@ -28,9 +28,8 @@ function Sg() {
       <p className='pw2'><input type='password' className='i-pw2' placeholder='비밀번호 확인'id='confirm_password' value={confirm_password} onChange={(e) => setConfirm_password(e.target.value)} /></p>
       <div className='sg'>{sg}</div>
       <p className='button'><Button variant="outline-secondary" id="loginbtn" onClick={() => Signing(setSg)}>만들기</Button></p>
-
+      
       <GooSignup />
-
       <Footer/>
     </div>
   );

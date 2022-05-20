@@ -32,7 +32,6 @@ function Translation() {
       <header>
         <Link to="/" style={{ textDecoration: 'none', color: 'black', fontSize: 20 }}>FunktionsQL</Link>
         <nav>
-           {/* {LoginState === false ? (<Login />) : (<Logout />)} */}
           <span className='username'>{localStorage.getItem("username")+" "}</span>
           <Button id="nav_button"variant="outline-dark" onClick={Logout}>로그아웃</Button>
         </nav>
