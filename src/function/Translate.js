@@ -112,5 +112,8 @@ function Translate(setResult) {
         setResult(`show functions 오류`)
       });
   }
+  else{
+    setResult(`쿼리를 다시확인해보세요.`) 
+  }
 }
 export default Translate;
