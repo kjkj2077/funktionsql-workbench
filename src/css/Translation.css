@@ -1,5 +1,12 @@
 .app {
   text-align: center;
+  
+}
+.username{
+  font-size: 125%;
+  font-weight: 1000;
+  color: rgb(46, 45, 45);
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 .total {

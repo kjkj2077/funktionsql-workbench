@@ -8,25 +8,19 @@ import Login from './Login.js';
 import Main from './Main.js';
 import Sg from './Sg';
 import { BrowserRouter } from 'react-router-dom';
-
-
+import PublicRoute from './function/PublicRoute';
+import PrivateRoute from './function/PrivateRoute';
 
 function App() {
   return (
-      <BrowserRouter>
-          <Route exact path='/'  >
-            <Main />
-          </Route>
-          <Route exact path='/sg'  >
-            <Sg />
-          </Route>
-          <Route exact path='/Login'  >
-            <Login />
-          </Route>
-          <Route exact path='/Translation'  >
-            <Translation />
-          </Route>
-      </BrowserRouter>
+    <BrowserRouter>
+      <Switch>
+        <PublicRoute  component={Main} exact path={'/'}/>
+        <PublicRoute restricted component={Sg} exact path={'/sg'}/>
+        <PublicRoute restricted component={Login} exact path={'/Login'}/>
+        <PrivateRoute  component={Translation} exact path={'/Translation'}/>
+      </Switch>
+    </BrowserRouter>
   );
 }
 

@@ -12,6 +12,7 @@ function Logging(setInformation) {
         }
     }).then((res) => {//성공
         console.log(res);
+        console.log(res.response);
         console.log(res.data.refresh_token);
         localStorage.setItem("re-token", res.data.refresh_token);
         localStorage.setItem("ac-token", res.data.access_token);

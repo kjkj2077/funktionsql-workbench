@@ -7,6 +7,8 @@ import Translate from './function/Translate';
 import Footer from './function/Footer';
 import MakeDB from './function/MakeDB';
 import MakeFunc from './function/MakeFunc';
+import Logout from './function/Logout';
+import isLogin from './function/isLogin';
 
 function Translation() {
   const [code, setCode] = useState("");
@@ -30,7 +32,9 @@ function Translation() {
       <header>
         <Link to="/" style={{ textDecoration: 'none', color: 'black', fontSize: 20 }}>FunktionsQL</Link>
         <nav>
-          <span>{localStorage.getItem("username")}</span>
+           {/* {LoginState === false ? (<Login />) : (<Logout />)} */}
+          <span className='username'>{localStorage.getItem("username")+" "}</span>
+          <Button id="nav_button"variant="outline-dark" onClick={Logout}>로그아웃</Button>
         </nav>
       </header>
       <hr id='hr'/>
@@ -60,16 +64,16 @@ function Translation() {
             </div>
             <div className='col-6'id='inner'>
               <div className="row" id="right_row">
-                <div className='col-3'id="DB_INPUT">
+                <div className='col-4'id="DB_INPUT">
                   <input type='text' placeholder=' 데이터베이스 이름' id='database_name' value={database_name} onChange={(e) => setDatabase_name(e.target.value)} ></input>
                 </div>
-                <div className='col-3' id="DB_BUT">
+                <div className='col-2' id="DB_BUT">
                 <Button variant="outline-dark" id="MAKEDB" onClick={() => MakeDB(setResult)}>DB 만들기</Button>
                 </div>
-                <div className='col-3' id="FUN_INPUT">
+                <div className='col-4' id="FUN_INPUT">
                   <input type='text' placeholder=' 함수 이름' id='function_name' value={function_name} onChange={(e) => setFunction_name(e.target.value)} ></input>
                 </div>
-                <div className='col-3'id="FUN_BUT">
+                <div className='col-2'id="FUN_BUT">
                 <Button variant="outline-dark" id="MAKEFUN" onClick={MakeFunc}>함수 만들기</Button>
                 </div>
               </div>
@@ -101,4 +105,6 @@ function Translation() {
     </div>
   );
 }
+
+
 export default Translation;
