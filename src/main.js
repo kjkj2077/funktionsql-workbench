@@ -15,7 +15,6 @@ function Main() {
         <h3>FunktionsQL</h3>
         <nav>
         <Login_logout_button/>
-        {/* <Button id="nav_button"variant="outline-dark" onClick={GooLogout}>구글 로그아웃</Button> */}
         </nav>
       </header>
       <div>
