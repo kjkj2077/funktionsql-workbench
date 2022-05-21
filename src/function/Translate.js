@@ -12,7 +12,7 @@ function Translate(setResult) {
       url: process.env.REACT_APP_QUERY_DATABASES_EXECUTE,
       data: {
         query_selector: arr[0], //use
-        query_target: arr[1].substring(1, arr[1].length - 1),
+        query_target: arr[1]
       },
     })
       .then((res) => {
@@ -30,10 +30,10 @@ function Translate(setResult) {
     axios({
       method: "POST",
       headers: { Authorization: Bearer + localStorage.getItem("ac-token") },
-      url: "http://3.39.83.176:8000/query/execute",
+      url: process.env.REACT_APP_QUERY_DATABASES_EXECUTE,
       data: {
         query_selector: arr[0], //run
-        query_target: arr[1].substring(1, arr[1].length - 1),
+        query_target: arr[1],
         database_id: localStorage.getItem("id"),
         parameters: {
           key1: "value1",
@@ -44,9 +44,10 @@ function Translate(setResult) {
         console.log("?", res);
         console.log("?", res.data.response);
         //setResult(`{ statusCode: ${res.data.response.statusCode}, body:  ${res.data.response.body}}`)
-        setResult(res.data.response)
+        setResult(JSON.stringify(res.data.response));
       })
       .catch((error) => {
+        console.log(error.response);
         if (error.response.status === 422) {
           setResult(`먼저 use {DB}를 해주세요.`)
         } else {
@@ -58,10 +59,10 @@ function Translate(setResult) {
     axios({
       method: "POST",
       headers: { Authorization: Bearer + localStorage.getItem("ac-token") },
-      url: "http://3.39.83.176:8000/query/execute",
+      url: process.env.REACT_APP_QUERY_DATABASES_EXECUTE,
       data: {
         query_selector: arr[0], //select
-        query_target: arr[1].substring(1, arr[1].length - 1),
+        query_target: arr[1],
         database_id: localStorage.getItem("id")
       },
     })
@@ -81,7 +82,7 @@ function Translate(setResult) {
     axios({
       method: "POST",
       headers: { Authorization: Bearer + localStorage.getItem("ac-token") },
-      url: "http://3.39.83.176:8000/query/execute",
+      url: process.env.REACT_APP_QUERY_DATABASES_EXECUTE,
       data: {
         query_selector: arr[0], //show databases
         query_target: arr[1],
@@ -91,7 +92,7 @@ function Translate(setResult) {
         if (res.data.response == '') {
           setResult('생성한 데이터베이스가 없습니다.') //feedback
         } else {
-          setResult(`${res.data.response}`)
+          setResult(res.data.response)
         }
       })
       .catch((error) => {
@@ -103,7 +104,7 @@ function Translate(setResult) {
     axios({
       method: "POST",
       headers: { Authorization: Bearer + localStorage.getItem("ac-token") },
-      url: "http://3.39.83.176:8000/query/execute",
+      url: process.env.REACT_APP_QUERY_DATABASES_EXECUTE,
       data: {
         query_selector: arr[0], //show functions
         query_target: arr[1],
@@ -113,7 +114,7 @@ function Translate(setResult) {
       .then((res) => {
         console.log("?", res.data.response);
         console.log("?", res);
-        setResult(`${res.data.response}`)
+        setResult(res.data.response)
       })
       .catch((error) => {
         if (error.response.status === 400) {
@@ -124,7 +125,7 @@ function Translate(setResult) {
       });
   }
   else {
-    setResult(`쿼리를 다시확인해보세요.`)
+    setResult(`쿼리를 다시확인해보세요.`);
   }
 }
 export default Translate;
