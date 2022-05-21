@@ -8,7 +8,7 @@ import Footer from './function/Footer';
 import MakeDB from './function/MakeDB';
 import MakeFunc from './function/MakeFunc';
 import Logout from './function/Logout';
-import isLogin from './function/isLogin';
+
 
 function Translation() {
   const [code, setCode] = useState("");
@@ -67,13 +67,13 @@ function Translation() {
                   <input type='text' placeholder=' 데이터베이스 이름' id='database_name' value={database_name} onChange={(e) => setDatabase_name(e.target.value)} ></input>
                 </div>
                 <div className='col-2' id="DB_BUT">
-                <Button variant="outline-dark" id="MAKEDB" onClick={() => MakeDB(setResult)}>DB 만들기</Button>
+                <Button variant="outline-dark" id="MAKEDB" onClick={() => {MakeDB(setResult);setDatabase_name("");}}>DB 만들기</Button>
                 </div>
                 <div className='col-4' id="FUN_INPUT">
                   <input type='text' placeholder=' 함수 이름' id='function_name' value={function_name} onChange={(e) => setFunction_name(e.target.value)} ></input>
                 </div>
                 <div className='col-2'id="FUN_BUT">
-                <Button variant="outline-dark" id="MAKEFUN" onClick={MakeFunc}>함수 만들기</Button>
+                <Button variant="outline-dark" id="MAKEFUN" onClick={() => {MakeFunc(setResult);setFunction_name("");}}>함수 만들기</Button>
                 </div>
               </div>
             </div>
@@ -90,7 +90,7 @@ function Translation() {
                 <input className='text2' placeholder={explain2} id='query_selector' value={query_selector} onChange={(e) => setQuery_selector(e.target.value)} />
               </div>
               <div className="col-2" id="QUERY_BUTTON">
-                <Button variant="outline-dark" id="translate-btn" onClick={() => Translate(setResult)}>쿼리 실행</Button>
+                <Button variant="outline-dark" id="translate-btn" onClick={() => {Translate(setResult);setQuery_selector("");}}>쿼리 실행</Button>
               </div>
             </div>
             <div className='text3' id="result"  value={result}>{result}</div>
