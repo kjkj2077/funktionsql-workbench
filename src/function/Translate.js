@@ -18,7 +18,7 @@ function Translate(setResult) {
       .then((res) => {
         console.log("res", res);
         localStorage.setItem("id", res.data.response.id)
-        setResult(`성공적으로 use ${arr[1]}를 했습니다.`)
+        setResult(`데이터베이스 변경`)
       })
       .catch((error) => {
         console.log(error);
@@ -89,7 +89,7 @@ function Translate(setResult) {
     })
       .then((res) => {
         if (res.data.response == '') {
-          setResult('생성한 데이터베이스가 아직없습니다.') //feedback
+          setResult('생성한 데이터베이스가 없습니다.') //feedback
         } else {
           setResult(`${res.data.response}`)
         }
@@ -117,9 +117,9 @@ function Translate(setResult) {
       })
       .catch((error) => {
         if (error.response.status === 400) {
-          setResult(`먼저 DB를만들고 use {DB}를 해주세요.`)
+          setResult(`사용하실 데이터베이스를 먼저 선택해주세요`)
         } else {
-          setResult(`접속불가상태`);
+          setResult(`사용불가`);
         }
       });
   }

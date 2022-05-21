@@ -24,7 +24,7 @@ function MakeFunc(setResult) {
         setResult(`성공적으로 함수 ${arr2[0]} 만들었습니다.`)
     }).catch(error => {
         if (error.response.status === 422) {
-            setResult(`먼저 DB를만들고 use {DB}를 해주세요.`)
+            setResult('사용하실 데이터베이스를 먼저 선택해주세요.')
           } else {
             setResult(`함수 만들기 실패`);
           }
