@@ -89,10 +89,13 @@ function Translate(setResult) {
       },
     })
       .then((res) => {
+        console.log(res.response);
+        console.log(res);
         if (res.data.response == '') {
           setResult('생성한 데이터베이스가 없습니다.') //feedback
         } else {
-          setResult(res.data.response)
+          
+          setResult(res.data.response.join(', '));
         }
       })
       .catch((error) => {
@@ -114,7 +117,7 @@ function Translate(setResult) {
       .then((res) => {
         console.log("?", res.data.response);
         console.log("?", res);
-        setResult(res.data.response)
+        setResult(res.data.response.join(', '))
       })
       .catch((error) => {
         if (error.response.status === 400) {

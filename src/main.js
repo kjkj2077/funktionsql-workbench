@@ -9,16 +9,20 @@ import Logout from './function/Logout';
 
 
 function Main() {
+  
+  
   return (
     <div className='app'>
       <header>
         <h3>FunktionsQL</h3>
+        
         <nav>
         <Login_logout_button/>
         </nav>
       </header>
       <div>
         <Login_logout/>
+       
         <img className="phoneImage" alt="iPhone_01" src="img/trans.png" />
       </div>
       <hr />

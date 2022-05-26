@@ -20,7 +20,7 @@ function Translation() {
   const [language, setLanguage] = useState(0);
   const explain = '  1.  DB를 만들고 use {DB 명}을 하세요.\n  2. 코드 입력과 언어 선택 후 Function 만들기 버튼 클릭\n  3. 코드 실행: run {함수명}\n  4. 데이터베이스 내에 있는 함수의 코드를 조회: select {함수명}\n  5. 사용자가 보유중인 모든 데이터베이스의 이름 보기: show databases\n  6. 현재 접속되어 있는 데이터베이스에 등록된 모든 함수의 이름 보기: show functions'
   const explain2 = ' use {DB}, run {Fun}, select {Fun}, show functions, show databases'
-
+  
   const L_copy = async () => { //코드입력창
     await navigator.clipboard.writeText(code);
   }
@@ -32,6 +32,7 @@ function Translation() {
       <header>
         <Link to="/" style={{ textDecoration: 'none', color: 'black', fontSize: 20 }}>FunktionsQL</Link>
         <nav>
+          
           <span className='username'>{localStorage.getItem("username")+" "}</span>
           <Button id="nav_button"variant="outline-dark" onClick={Logout}>로그아웃</Button>
         </nav>
