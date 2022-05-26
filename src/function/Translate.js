@@ -94,7 +94,6 @@ function Translate(setResult) {
         if (res.data.response == '') {
           setResult('생성한 데이터베이스가 없습니다.') //feedback
         } else {
-          
           setResult(res.data.response.join(', '));
         }
       })
