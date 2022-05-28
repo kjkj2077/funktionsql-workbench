@@ -8,6 +8,8 @@ import Footer from './function/Footer';
 import MakeDB from './function/MakeDB';
 import MakeFunc from './function/MakeFunc';
 import Logout from './function/Logout';
+import { Copy } from 'react-feather';
+import Copy1 from './function/Copy1';
 
 
 function Translation() {
@@ -27,6 +29,7 @@ function Translation() {
   const R_copy = async () => { //결과창
     await navigator.clipboard.writeText(result);
   }
+
   return (
     <div className='app'>
       <header>
@@ -105,6 +108,7 @@ function Translation() {
     </div>
   );
 }
+
 
 
 export default Translation;
