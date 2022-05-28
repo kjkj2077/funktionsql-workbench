@@ -8,7 +8,7 @@ import isLogin from './function/isLogin';
 import Logout from './function/Logout';
 
 
-function Main() {
+function main() {
   
   
   return (
@@ -63,7 +63,7 @@ function Login_logout_button(){
   )
 }
 
-export default Main;
+export default main;
 
 
 
